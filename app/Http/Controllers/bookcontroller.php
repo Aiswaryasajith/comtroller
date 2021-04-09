@@ -15,7 +15,7 @@ class bookcontroller extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

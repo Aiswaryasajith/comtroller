@@ -28,3 +28,8 @@ Route::post("/busread",[buscontroller::class,'store']);
 
 Route::post("/bookread",[bookcontroller::class,'store']);
 
+Route::get("/facultyview",[controllername::class,'index']);
+
+Route::get("/bookview",[bookcontroler::class,'index']);
+
+Route::post("/facultysearch",[controllername::class,'search']);

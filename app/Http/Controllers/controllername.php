@@ -13,8 +13,9 @@ class controllername extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        $faculty=facultymodel::all();
+        return view('faculty',compact('faculty'));
     }
 
     /**
@@ -22,6 +23,14 @@ class controllername extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request)
+    {
+         $getFname=request('fname');
+         $faculty=facultymodel::query()->where('fname','LIKE',"%{$getFname}%")->get();
+
+        return view('faculty',compact('faculty'));
+    }
+
     public function create()
     {
         return view('create');
